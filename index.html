@@ -1397,6 +1397,134 @@
 #dotnav-wbw .dotnav__label { left: calc(100% + 2px); width: max-content; max-width: calc(max(var(--gutter), (100vw - var(--content-max)) / 2) - 64px); white-space: normal; font-size: 20px; line-height: 20px; padding-block: 0; }
 @media (max-width: 1099px) { #dotnav-wbw .dotnav__label { display: none; } }
 
+/* =====================================================================
+   Project page: Brick & Bolt  (#brickbolt)
+   Orange hero, cream paper, apricot stat boxes and peach trend cards.
+   ===================================================================== */
+#view-bb {
+  --b-ink: #00001c;
+  --b-orange: #ff6f32;
+  --b-orange-d: #d4531a;
+  --b-apricot: #fde8cc;
+  --b-peach: #fddacb;
+  --b-line: rgba(0, 0, 28, 0.16);
+  --b-mono: "DM Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  color: var(--b-ink);
+}
+.bb :where(h1, h2, h3, h4, p, ul, ol, dl, dd, figure, table) { margin: 0; padding: 0; }
+.bb :where(ul, ol) { list-style: none; }
+.bb a:focus-visible, .bb-cmp__scroll:focus-visible { outline: 2px solid var(--b-ink); outline-offset: 4px; border-radius: 2px; }
+.bb-hero {
+  position: relative; display: flex; align-items: center; min-height: min(880px, 100svh);
+  padding-left: max(var(--gutter), calc((100% - var(--content-max)) / 2), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), calc((100% - var(--content-max)) / 2), env(safe-area-inset-right, 0px));
+  background: var(--b-orange); color: var(--b-ink); scroll-margin-top: 0;
+}
+.bb-hero__inner { width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 20px; }
+.bb-hero__title { font-size: 48px; line-height: 56px; font-weight: 600; letter-spacing: -0.72px; }
+.bb-hero__lead { font-size: 18px; line-height: 30px; }
+.bb-meta { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; padding-left: 10px; border-left: 3px solid var(--b-ink); font-size: 14px; line-height: 21px; margin: 4px 0 0; }
+.bb-meta dt { font-weight: 600; }
+.bb-meta dd { margin: 0; }
+.bb-back { color: var(--b-ink); font-size: 14px; line-height: 20px; font-weight: 600; letter-spacing: 1.68px; text-transform: uppercase; text-decoration: none; }
+.bb-back:hover { text-decoration: underline; text-underline-offset: 4px; }
+.bb-hero .bb-back { position: absolute; top: calc(28px + env(safe-area-inset-top, 0px)); left: max(var(--gutter), calc((100% - var(--content-max)) / 2), env(safe-area-inset-left, 0px)); }
+.bb-sec { padding-block: var(--section-gap) 0; scroll-margin-top: 40px; }
+.bb-sec--last { padding-bottom: var(--section-gap); }
+.bb-wrap { width: 100%; max-width: calc(var(--content-max) + 2 * var(--gutter)); margin-inline: auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+.bb-wrap > * + * { margin-top: 56px; }
+.bb-eyebrow { font-family: var(--b-mono); font-size: 12px; line-height: 20px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--b-orange-d); }
+.bb-h2 { font-size: 32px; line-height: 40px; font-weight: 400; letter-spacing: -0.16px; margin-top: 12px !important; }
+.bb-h3 { font-size: 22px; line-height: 30px; font-weight: 500; }
+.bb-p { font-size: 18px; line-height: 30px; max-width: 560px; }
+.bb-src { font-size: 14px; line-height: 20px; margin-top: 20px; }
+.bb-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.bb-stat { background: var(--b-apricot); border-radius: 24px; padding: 28px 24px 30px; }
+.bb-stat b { display: block; font-size: 48px; line-height: 56px; font-weight: 500; letter-spacing: -0.5px; }
+.bb-stat p { margin-top: 16px; font-size: 18px; line-height: 30px; }
+/* audit */
+.bb-audit { display: grid; grid-template-columns: minmax(0, 264px) minmax(0, 1fr) minmax(0, 264px); gap: 24px; margin-top: 32px; align-items: start; }
+.bb-audit__col { display: flex; flex-direction: column; gap: 24px; }
+.bb-ac { border: 1px solid #ffdcc8; border-radius: 12px; background: var(--card); padding: 16px; }
+.bb-pill { display: inline-block; font-size: 12px; line-height: 16px; padding: 1px 6px; border-radius: 4px; border: 1px solid; }
+.bb-pill--fix { background: #ffe2dc; border-color: #f2a79a; color: #5a1a10; }
+.bb-pill--keep { background: #dcf1d4; border-color: #a9d49a; color: #1d4010; }
+.bb-ac__t { margin-top: 14px !important; font-size: 14px; line-height: 20px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
+.bb-ac__p { margin-top: 12px !important; font-size: 14px; line-height: 18px; }
+.bb-ac__h { margin-top: 12px !important; font-size: 12px; line-height: 16px; font-style: italic; }
+.bb-page { border-radius: 24px; border: 1px solid var(--b-line); overflow: hidden; background: #fff; display: block; }
+.bb-page > img, .bb-page > span > img { display: block; width: 100%; height: auto; }
+.bb-page__cond { position: relative; z-index: 1; display: block; }
+.bb-page__foot { display: block; margin-top: -5.4%; }
+.bb-strip { margin-top: 20px !important; width: 48%; margin-left: auto; border: 1px solid var(--b-line); border-radius: 12px; overflow: hidden; background: #fff; }
+.bb-strip img { display: block; width: 100%; height: auto; }
+.bb-strip figcaption { font-size: 12px; line-height: 16px; padding: 8px 10px; border-top: 1px solid var(--b-line); }
+.bb-pt { width: 100%; border-collapse: collapse; margin-top: 28px; }
+.bb-pt th, .bb-pt td { text-align: left; vertical-align: middle; padding: 16px 0; border-bottom: 1px dotted var(--b-line); }
+.bb-pt tr:first-child th, .bb-pt tr:first-child td { border-top: 0; }
+.bb-pt th { width: 184px; padding-left: 8px; font-size: 14px; line-height: 20px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
+.bb-pt li { position: relative; padding-left: 20px; font-size: 20px; line-height: 30px; }
+.bb-pt li::before { content: ""; position: absolute; left: 4px; top: 13px; width: 4px; height: 4px; border-radius: 50%; background: var(--b-ink); }
+/* market study */
+.bb-cmp { display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 24px; margin-top: 32px; align-items: start; }
+.bb-cmp__lib { border: 1px solid #ffdcc8; border-radius: 24px; background: #f7f7f5; overflow: hidden; }
+.bb-cmp__lib img { display: block; width: 100%; height: auto; }
+.bb-cmp__scroll { border: 1px solid #ffdcc8; border-radius: 24px; background: #fff; overflow-x: auto; padding: 12px; }
+.bb-cmp__scroll img { display: block; width: 1560px; max-width: none; height: auto; }
+.bb-hint { display: none; margin-top: 8px; font-size: 12px; line-height: 16px; opacity: 0.7; }
+.bb-trends { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+.bb-tc { background: var(--b-peach); border-radius: 24px; padding: 24px; display: flex; flex-direction: column; }
+.bb-tc__k { font-size: 14px; line-height: 20px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
+.bb-tc__p { margin-top: 20px !important; font-size: 20px; line-height: 30px; }
+.bb-tc__img { margin-top: auto; padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+.bb-tc__img img { display: block; width: 100%; height: auto; border-radius: 4px; background: #fff; }
+.bb-tc__s { margin-top: 16px !important; font-size: 14px; line-height: 20px; }
+/* form flow */
+.bb-t { width: 100%; border-collapse: collapse; }
+.bb-t thead th { text-align: left; font-family: var(--b-mono); font-size: 12px; line-height: 20px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; padding: 0 16px 14px 0; border-bottom: 1px dotted var(--b-line); }
+.bb-t td, .bb-t tbody th { text-align: left; vertical-align: top; padding: 18px 16px 18px 0; border-bottom: 1px dotted var(--b-line); font-size: 18px; line-height: 30px; font-weight: 400; }
+.bb-t tbody th { font-weight: 600; width: 22%; }
+.bb-t tbody th span { font-weight: 600; }
+.bb-t thead th:nth-child(1) { width: 22%; }
+/* section dots: ink on the orange hero, burnt orange on cream */
+#dotnav-bb { --kn: #d4531a; --kn-bg: var(--card); }
+#dotnav-bb.on-hero { --kn: #00001c; }
+#dotnav-bb a { color: var(--kn); }
+#dotnav-bb a:focus-visible { outline-color: var(--kn); }
+#dotnav-bb .dotnav__dot { border-color: var(--kn); transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease; }
+#dotnav-bb a[aria-current="true"] .dotnav__dot { background: var(--kn); }
+#dotnav-bb a:is(:hover, :focus-visible):not([aria-current="true"]) .dotnav__dot { background: color-mix(in srgb, var(--kn) 30%, transparent); }
+#dotnav-bb .dotnav__label { font-family: var(--e-hand-font, "Gaegu", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive); font-size: 22px; line-height: 24px; letter-spacing: 0.03em; color: var(--kn); border: 0; background: none; padding-inline: 4px; }
+#dotnav-bb .dotnav__label { left: calc(100% + 2px); width: max-content; max-width: calc(max(var(--gutter), (100vw - var(--content-max)) / 2) - 64px); white-space: normal; font-size: 20px; line-height: 20px; padding-block: 0; }
+@media (max-width: 1099px) { #dotnav-bb .dotnav__label { display: none; } }
+@media (max-width: 1023px) {
+  .bb-audit { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .bb-audit__mid { grid-column: 1 / -1; grid-row: 1; }
+  .bb-trends { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bb-cmp { grid-template-columns: minmax(0, 1fr); }
+  .bb-cmp__lib { max-width: 420px; }
+}
+@media (max-width: 767px) {
+  .bb-hero { min-height: min(640px, 100svh); padding-top: 88px; padding-bottom: 56px; align-items: flex-end; }
+  .bb-hero__title { font-size: 40px; line-height: 48px; }
+  .bb-sec { padding-block-start: 72px; }
+  .bb-wrap > * + * { margin-top: 40px; }
+  .bb-h2 { font-size: 28px; line-height: 36px; }
+  .bb-stats { grid-template-columns: minmax(0, 1fr); }
+  .bb-audit { grid-template-columns: minmax(0, 1fr); }
+  .bb-strip { width: 70%; }
+  .bb-trends { grid-template-columns: minmax(0, 1fr); }
+  .bb-hint { display: block; }
+  .bb-pt th { width: 112px; letter-spacing: 0.12em; }
+  .bb-pt li { font-size: 18px; line-height: 28px; }
+  .bb-t thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .bb-t, .bb-t tbody, .bb-t tr, .bb-t td, .bb-t tbody th { display: block; width: auto; }
+  .bb-t tr { padding: 18px 0; border-bottom: 1px dotted var(--b-line); }
+  .bb-t td, .bb-t tbody th { border: 0; padding: 4px 0; }
+  .bb-t tbody th { width: auto; font-size: 20px; }
+  .bb-t td[data-l]::before { content: attr(data-l); display: block; font-family: var(--b-mono); font-size: 10px; line-height: 14px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.65; margin-bottom: 2px; }
+}
+
 
 /* Home page section dots and tags: same style as the Klock-It page. Notes handwriting, no box, #3F5BA9 on the light page; tags wrap inside the left margin */
 #dotnav { --kn: #3f5ba9; }
@@ -1650,7 +1778,7 @@
       <article class="card card--project">
         <div class="card__cover" style="background:#ff6f32" role="img" aria-label="Boosting referrals at Brick &amp; Bolt project cover"></div>
         <div class="card__body">
-          <h3 class="card__title">Boosting referrals at Brick &amp; Bolt</h3>
+          <h3 class="card__title"><a class="card__link" href="#brickbolt">Boosting referrals at Brick &amp; Bolt</a></h3>
           <div class="card__text">
             <p class="body">Designed the customer web experience for a behaviour-triggered referral program for Brick &amp; Bolt.</p>
             <p class="body">With rewards of up to $1,000, the project successfully generated $1.52M in annual GMV.</p>
@@ -2185,6 +2313,99 @@ root.querySelectorAll('.sc-k,.sc-st').forEach(function(b){var f=b.dataset.f;
           </div>
         </div>
         <p class="kl-end"><a class="kl-back" href="#projects">Back to projects</a></p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="view-bb" hidden>
+  <nav class="dotnav" id="dotnav-bb" aria-label="Project sections">
+    <ul>
+      <li><a href="#bb-top" aria-current="true"><span class="dotnav__dot"></span><span class="dotnav__label">Overview</span></a></li>
+      <li><a href="#bb-brief"><span class="dotnav__dot"></span><span class="dotnav__label">Project Brief</span></a></li>
+      <li><a href="#bb-audit"><span class="dotnav__dot"></span><span class="dotnav__label">Audit</span></a></li>
+      <li><a href="#bb-market"><span class="dotnav__dot"></span><span class="dotnav__label">Market Study</span></a></li>
+      <li><a href="#bb-flow"><span class="dotnav__dot"></span><span class="dotnav__label">Form Flow</span></a></li>
+    </ul>
+  </nav>
+  <header class="bb-hero" id="bb-top">
+    <a class="bb-back" href="#projects">Back to projects</a>
+    <div class="bb-hero__inner">
+      <h1 class="bb-hero__title">Revamping Brick&amp;Bolt&rsquo;s Referral Web Experience</h1>
+      <p class="bb-hero__lead">Referred customers convert at more than twice the company average, but the referral page brought in about three leads a month. I audited the page, studied how other programmes win referrals, and redesigned it to explain the offer, build trust and get people to the form.</p>
+      <dl class="bb-meta"><dt>Role</dt><dd>Product Designer</dd><dt>Team</dt><dd>Product, Brick &amp; Bolt</dd><dt>Duration</dt><dd>3 weeks, March 2025</dd></dl>
+    </div>
+  </header>
+  <main class="bb">
+    <section class="bb-sec" id="bb-brief" aria-labelledby="bb-brief-t">
+      <div class="bb-wrap">
+        <div><p class="bb-eyebrow">Project brief</p><h2 class="bb-h2" id="bb-brief-t">Referred leads convert well. But, only few of them arrive.</h2></div>
+        <p class="bb-p">Referral and offline leads together made up 17% of company GMV in December 2024, and the 2025 plan was to grow them to about three times that size</p>
+        <div>
+          <div class="bb-stats">
+            <div class="bb-stat"><b>17%</b><p>of company GMV came from referral and offline leads in December 2024.</p></div>
+            <div class="bb-stat"><b>28.5&ndash;40%</b><p>meeting-to-conversion for customer referrals, Oct to Dec 2024, against a company average of 12%.</p></div>
+            <div class="bb-stat"><b>~3 leads</b><p>a month from about 90 visitors a month on the referral page.</p></div>
+          </div>
+          <p class="bb-src">Sources: hdfc-tru.com (17% of GMV); Product Requirements Document</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bb-sec" id="bb-audit" aria-labelledby="bb-audit-t">
+      <div class="bb-wrap">
+        <div><p class="bb-eyebrow">Audit</p><h2 class="bb-h2" id="bb-audit-t">What was wrong with the live page?</h2></div>
+        <div>
+          <h3 class="bb-h3">UX Audit: 10 Usability Heuristics</h3>
+          <div class="bb-audit">
+            <div class="bb-audit__col bb-audit__col--l"><article class="bb-ac"><span class="bb-pill bb-pill--fix">To Fix</span><h4 class="bb-ac__t">Ambiguous banner</h4><p class="bb-ac__p">The headline isn&rsquo;t catchy, never says &ldquo;referral&rdquo; and has no call to action. 7/10 employees assumed the people in the image as spouses, rather than friends who would refer each other.</p><p class="bb-ac__h">Heuristic: Recognition Rather Than Recall<br>Aim: To reduce the cognitive load on the user</p></article><article class="bb-ac"><span class="bb-pill bb-pill--fix">To Fix</span><h4 class="bb-ac__t">No introduction to the programme</h4><p class="bb-ac__p">When asked a few non-product team employees what they inferred from &lsquo;referrals&rsquo;, many people related it to &lsquo;job-referrals&rsquo;. Customers from other walks of life can misread it too.</p><p class="bb-ac__h">Heuristic: Match Between System and Real World<br>Aim: The design should speak the users&rsquo; language.</p></article><article class="bb-ac"><span class="bb-pill bb-pill--keep">To Keep</span><h4 class="bb-ac__t">Add multiple references</h4><p class="bb-ac__p">It saves time and lets one submission bring in several leads. Referrers include brokers and professionals who know many prospects.</p><p class="bb-ac__h">Heuristic: Flexibility and Efficiency of Use<br>Aim: To provide accelerators by tailoring content and functionality for individual users.</p></article><article class="bb-ac"><span class="bb-pill bb-pill--keep">To Keep</span><h4 class="bb-ac__t">Footer link</h4><p class="bb-ac__p">Footer link helps the user to discover or navigate back to the Referral page.</p><p class="bb-ac__h">Heuristic: Flexibility and Efficiency of Use<br>Aim: To provide accelerators by tailoring content and functionality for individual users.</p></article><article class="bb-ac"><span class="bb-pill bb-pill--fix">To Fix</span><h4 class="bb-ac__t">Referral policy page</h4><p class="bb-ac__p">Important terms live on a separate Referral Policy page. They belong in the FAQs, where people already look for answers.</p><p class="bb-ac__h">Heuristic: Help and Documentation<br>Aim: Provide &lsquo;reactive help&rsquo; to answer questions, troubleshoot user problems, or provide detailed documentation and materials.</p></article></div>
+            <div class="bb-audit__mid">
+              <div class="bb-page" role="group" aria-label="Screenshots of the live referral page, top to bottom">
+                <img src="bb/bb-live-hero.jpg" alt="Live referral page header and banner: &ldquo;Earn Upto 1 Lac Per Month&rdquo; over a photo of two people with a piggy bank." width="2880" height="1044" loading="lazy" decoding="async">
+                <img src="bb/bb-live-steps.jpg" alt="Live page section &ldquo;How to become a referral partner&rdquo; with three tightly packed steps." width="2880" height="510" loading="lazy" decoding="async">
+                <img src="bb/bb-live-details.jpg" alt="Live page form titled Details, asking for name, email and mobile number." width="2744" height="972" loading="lazy" decoding="async">
+                <img src="bb/bb-live-refs.jpg" alt="Live page form for the references&rsquo; details, with an Add More link and a Submit button." width="2740" height="1014" loading="lazy" decoding="async">
+                <span class="bb-page__cond"><img src="bb/bb-live-conditions.jpg" alt="Live page &ldquo;Conditions Apply&rdquo; section with the terms, and a floating Refer Now &amp; Earn button." width="2880" height="1102" loading="lazy" decoding="async"></span>
+                <span class="bb-page__foot"><img src="bb/bb-live-footer.jpg" alt="Live page footer with site links, contact details and app store badges." width="2874" height="1026" loading="lazy" decoding="async"></span>
+              </div>
+              <figure class="bb-strip"><img src="bb/bb-live-strip.jpg" alt="The &ldquo;How to become a referral partner&rdquo; steps with the floating Refer Now &amp; Earn button sitting on top of the text." width="2490" height="436" loading="lazy" decoding="async"><figcaption>The floating button covers the steps.</figcaption></figure>
+            </div>
+            <div class="bb-audit__col bb-audit__col--r"><article class="bb-ac"><span class="bb-pill bb-pill--fix">To Fix</span><h4 class="bb-ac__t">Cluttered steps</h4><p class="bb-ac__p">The steps to become a referral partner are packed together with tight line spacing, and they don&rsquo;t match the updated process in the PRD.</p><p class="bb-ac__h">Heuristic: Aesthetic and Minimalist Design<br>Aim: To reduce the &lsquo;noise&rsquo; in the design</p></article><article class="bb-ac"><span class="bb-pill bb-pill--fix">To Fix</span><h4 class="bb-ac__t">Unstructured form</h4><p class="bb-ac__p">Nothing separates the referrer&rsquo;s details from the referee&rsquo;s. Fields don&rsquo;t line up, white space is uneven and the text under Submit is cramped.</p><p class="bb-ac__h">Heuristic: Match Between System and Real World<br>Aim: To make information appear in a natural &amp; logical order.</p></article><article class="bb-ac"><span class="bb-pill bb-pill--fix">To Fix</span><h4 class="bb-ac__t">Missing FAQs</h4><p class="bb-ac__p">The process of referring has multiple stages and longer timeline depending on multiple stakeholders. The visitors are bound to have doubts which can be possible resolved in the website by listing the FAQs.</p><p class="bb-ac__h">Heuristic: Help and Documentation<br>Aim: Provide &lsquo;reactive help&rsquo; to answer questions, troubleshoot user problems, or provide detailed documentation and materials.</p></article><article class="bb-ac"><span class="bb-pill bb-pill--keep">To Keep</span><h4 class="bb-ac__t">Two channels to chat</h4><p class="bb-ac__p">Users can either chat with the website chatbot, or through WhatsApp bot.</p><p class="bb-ac__h">Heuristic: Flexibility and Efficiency of Use<br>Aim: To provide accelerators by tailoring content and functionality for individual users.</p></article><article class="bb-ac"><span class="bb-pill bb-pill--fix">To Fix</span><h4 class="bb-ac__t">Hovering CTA</h4><p class="bb-ac__p">The floating CTA often blocks the text from the users.</p><p class="bb-ac__h">Heuristic: Aesthetic and Minimalist Design<br>Aim: Don&rsquo;t let unnecessary elements distract users from the information they really want.</p></article></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="bb-h3">Pointers from other teams:</h3>
+          <table class="bb-pt"><tbody>
+            <tr><th scope="row">Marketing</th><td><ul><li>&ldquo;Cashback&rdquo; undersells the reward</li><li>Promote referrals across channels</li></ul></td></tr>
+            <tr><th scope="row">Sales</th><td><ul><li>Referrers have complaint that they can&rsquo;t share their referral</li><li>The app asks for a code that isn&rsquo;t mentioned anywhere</li></ul></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </section>
+
+    <section class="bb-sec" id="bb-market" aria-labelledby="bb-market-t">
+      <div class="bb-wrap">
+        <div><p class="bb-eyebrow">Market study</p><h2 class="bb-h2" id="bb-market-t">What other referral programmes do?</h2></div>
+        <div>
+          <h3 class="bb-h3">Comparative Analysis</h3>
+          <p class="bb-p" style="margin-top:28px">I collected 13 referral and affiliate pages across industries and built a <b>visual library</b> of the pages and conducted a <b>comparison analysis.</b></p>
+          <div class="bb-cmp">
+            <figure class="bb-cmp__lib"><img src="bb/bb-library.jpg" alt="A board of collected referral and affiliate page screenshots, grouped by company." width="1300" height="1050" loading="lazy" decoding="async"></figure>
+            <div class="bb-cmp__tbl"><div class="bb-cmp__scroll" tabindex="0" role="group" aria-label="Comparison table of 13 referral programmes, scrolls sideways"><img src="bb/bb-matrix.jpg" alt="Comparison table of 13 referral and affiliate pages (Uber, Ola Electric, Tesla, SkillShare, Airbnb, Porsche Norwell, Google Workspace, Amazon Seller, Shopify, Hostinger, Fiverr, Fiverr Affiliate, Skyscanner) against affiliate, menu integration, banner CTA, floating button, description and illustration." width="2220" height="356" loading="lazy" decoding="async"></div><p class="bb-hint">Scroll sideways to see the full table.</p></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="bb-h3">Trend Recommendations</h3>
+          <div class="bb-trends"><article class="bb-tc"><h4 class="bb-tc__k">Success stories and testimonials</h4><p class="bb-tc__p">Real earnings from real referrers build credibility, motivate others and show that people like them are already benefiting.</p><div class="bb-tc__img"><img src="bb/bb-t-leader.jpg" alt="A referral leaderboard listing ten referrers with their points and earnings." width="2200" height="1236" loading="lazy" decoding="async"></div><p class="bb-tc__s">Source: Cuvette.tech</p></article><article class="bb-tc"><h4 class="bb-tc__k">Footer call to action</h4><p class="bb-tc__p">A compelling heading and a strong button catch people who are about to leave.</p><div class="bb-tc__img"><img src="bb/bb-t-cta-light.jpg" alt="A footer banner reading &ldquo;Let&rsquo;s be partners in success&rdquo; with an Earn now button." width="1836" height="420" loading="lazy" decoding="async"><img src="bb/bb-t-cta-blue.jpg" alt="A blue banner reading &ldquo;Join our Affiliate Programme&rdquo; with an Apply now button." width="1468" height="418" loading="lazy" decoding="async"></div><p class="bb-tc__s">Source: Hostinger, Skyscanner</p></article><article class="bb-tc"><h4 class="bb-tc__k">Personalisation</h4><p class="bb-tc__p">Referral codes with the user&rsquo;s name, pre-written messages to send to friends, and exclusive emails for loyal customers.</p><div class="bb-tc__img"><img src="bb/bb-t-fabletics.jpg" alt="Fabletics referral page: &ldquo;Give a deal. Get $40&rdquo;, with a pre-written message and share buttons." width="1760" height="1002" loading="lazy" decoding="async"></div><p class="bb-tc__s">Source: Fabletics</p></article><article class="bb-tc"><h4 class="bb-tc__k">Visibility</h4><p class="bb-tc__p">Links in first-level menus, floating buttons, footers and dashboards. Emails and newsletters as reminders when customers feel &lsquo;good&rsquo;.</p><div class="bb-tc__img"><img src="bb/bb-t-google.jpg" alt="Google Workspace page: &ldquo;Earn rewards by referring Google Workspace&rdquo;." width="2876" height="1364" loading="lazy" decoding="async"></div><p class="bb-tc__s">Source: Google</p></article><article class="bb-tc"><h4 class="bb-tc__k">Leadership testimonials</h4><p class="bb-tc__p">When leaders endorse the programme and explain its purpose, it feels like a company commitment and not a marketing tactic.</p><div class="bb-tc__img"><img src="bb/bb-t-quote.jpg" alt="A quote from a Keller Williams regional director about the referral programme." width="2880" height="1002" loading="lazy" decoding="async"></div><p class="bb-tc__s">Source: Keller Williams</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bb-sec bb-sec--last" id="bb-flow" aria-labelledby="bb-flow-t">
+      <div class="bb-wrap">
+        <div><h3 class="bb-h3" id="bb-flow-t">Form Flow</h3>
+          <p class="bb-p" style="margin-top:28px">I compared 4 ways a referral could enter the system, scoring each on ease of use, engagement, lead quality, drop-off risk &amp; personal touch.</p></div>
+        <table class="bb-t"><thead><tr><th scope="col">Flow</th><th scope="col">How it works</th><th scope="col">Strength</th><th scope="col">Risk</th></tr></thead><tbody><tr><th scope="row">Referral link<br><span>(self-referral by email)</span></th><td data-l="How it works">The user enters their email, gets a link and shares it with friends.</td><td data-l="Strength">The easiest and most scalable. Clicks and conversions are tracked automatically.</td><td data-l="Risk">Low personal touch, spam risk and low intent from people who get a generic link.</td></tr><tr><th scope="row">Friend-specific email</th><td data-l="How it works">The user enters their email and a friend&rsquo;s email. The friend gets a personalised invite.</td><td data-l="Strength">More trustworthy for the friend, and the company collects emails for later.</td><td data-l="Risk">More effort, and some users hesitate to share friends&rsquo; details.</td></tr><tr><th scope="row">Multi-referral form: the friend calls</th><td data-l="How it works">The user fills in their details and their friends&rsquo;. The friends must call Brick &amp; Bolt.</td><td data-l="Strength">High-intent leads, since people who make the effort to call are likely to convert.</td><td data-l="Risk">High friction and a lengthy form, so more drop-off and lower scalability.</td></tr><tr><th scope="row">Multi-referral form: Brick &amp; Bolt calls<br><span>(the current flow)</span></th><td data-l="How it works">The user fills in their details and their friends&rsquo;. Brick &amp; Bolt contacts the friends.</td><td data-l="Strength">Rated highest on engagement, lead quality and personal touch. Sales can qualify leads on the call.</td><td data-l="Risk">Some friends may find unsolicited calls intrusive, and users may hesitate to share a friend&rsquo;s number.</td></tr></tbody></table>
       </div>
     </section>
   </main>
@@ -3055,18 +3276,20 @@ root.querySelectorAll('.sc-k,.sc-st').forEach(function(b){var f=b.dataset.f;
     var proj = document.getElementById("view-project");
     var klock = document.getElementById("view-klock");
     var wbw = document.getElementById("view-wbw");
+    var bb = document.getElementById("view-bb");
     var homeTitle = document.title;
     var projTitle = "Redefining Ecotourism for India | Avni";
     function route() {
       var h = location.hash.replace(/^#/, "");
-      var isEco = h === "ecotourism", isKl = h === "klockit", isWb = h === "wordbyword";
-      var isProj = isEco || isKl || isWb;
+      var isEco = h === "ecotourism", isKl = h === "klockit", isWb = h === "wordbyword", isBb = h === "brickbolt";
+      var isProj = isEco || isKl || isWb || isBb;
       home.hidden = isProj;
       proj.hidden = !isEco;
       klock.hidden = !isKl;
       wbw.hidden = !isWb;
+      bb.hidden = !isBb;
       document.documentElement.classList.toggle("is-project", isProj);
-      document.title = isEco ? projTitle : isKl ? "Klock-It! | Avni" : isWb ? "Word-by-word | Avni" : homeTitle;
+      document.title = isEco ? projTitle : isKl ? "Klock-It! | Avni" : isWb ? "Word-by-word | Avni" : isBb ? "Brick & Bolt referrals | Avni" : homeTitle;
       var el = !isProj && h ? document.getElementById(h) : null;
       if (el) el.scrollIntoView({ behavior: "instant" });
       else window.scrollTo({ top: 0, behavior: "instant" });
@@ -3231,6 +3454,40 @@ root.querySelectorAll('.sc-k,.sc-st').forEach(function(b){var f=b.dataset.f;
     update();
   })();
 </script>
+<script>
+  /* Brick & Bolt section dots */
+  (function () {
+    var proj = document.getElementById("view-bb");
+    var nav = document.getElementById("dotnav-bb");
+    var links = Array.prototype.slice.call(nav.querySelectorAll("a"));
+    var targets = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+    var ticking = false;
+    function setActive(i) { links.forEach(function (a, n) { if (n === i) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); }); }
+    function within(id, mid) { var r = document.getElementById(id).getBoundingClientRect(); return r.top <= mid && r.bottom >= mid; }
+    function update() {
+      ticking = false;
+      if (proj.hidden) return;
+      var mid = window.innerHeight / 2;
+      nav.classList.toggle("on-hero", within("bb-top", mid));
+      var line = window.innerHeight * 0.4, idx = 0;
+      targets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top <= line) idx = i; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) idx = targets.length - 1;
+      setActive(idx);
+    }
+    function request() { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
+    links.forEach(function (a, i) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (i === 0) window.scrollTo({ top: 0 }); else if (targets[i]) targets[i].scrollIntoView();
+        setActive(i);
+      });
+    });
+    window.addEventListener("scroll", request, { passive: true });
+    window.addEventListener("resize", request);
+    update();
+  })();
+</script>
+
 <script>
   /* Word-by-word section dots */
   (function () {
