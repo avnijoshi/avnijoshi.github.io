@@ -1486,6 +1486,62 @@
 .bb-t tbody th { font-weight: 600; width: 22%; }
 .bb-t tbody th span { font-weight: 600; }
 .bb-t thead th:nth-child(1) { width: 22%; }
+/* redesign: AIDA walkthrough */
+.bb-aida { display: grid; grid-template-columns: 104px minmax(0, 1fr) minmax(0, 264px); gap: 24px; margin-top: 32px; align-items: stretch; }
+.bb-aida__l, .bb-aida__r { position: relative; }
+.bb-aida__l > *, .bb-aida__r > * { position: absolute; left: 0; right: 0; top: var(--y); }
+.bb-aida__mid img { display: block; width: 100%; height: auto; border: 1px solid var(--b-line); border-bottom: 0; background: #fff; }
+.bb-st { text-align: center; }
+.bb-st i { display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin: 0 auto; border-radius: 50%; background: var(--b-apricot); font-style: normal; font-size: 32px; line-height: 1; }
+.bb-st span { display: block; margin: 14px -8px 0; font-size: 14px; line-height: 20px; letter-spacing: 0.18em; text-transform: uppercase; white-space: nowrap; }
+.bb-an__st { display: none; margin-bottom: 10px; font-family: var(--b-mono); font-size: 11px; line-height: 16px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--b-orange-d); }
+.bb-an .bb-ac__t { margin-top: 0 !important; }
+/* feedback table */
+.bb-t--fb thead th:nth-child(1) { width: 32%; }
+.bb-t--fb thead th:nth-child(3) { width: 112px; padding-right: 0; }
+.bb-t--fb tbody th { width: 32%; font-weight: 400; }
+.bb-t--fb td:last-child { padding-right: 0; }
+.bb-pill--st { font-family: var(--b-mono); font-size: 13px; line-height: 20px; letter-spacing: 0.14em; text-transform: uppercase; padding: 1px 8px; border-radius: 4px; }
+/* final design: laptop mockup */
+.bb-lap__stage { padding: clamp(28px, 6vw, 72px) clamp(14px, 5vw, 64px) clamp(32px, 6.5vw, 80px); border-radius: 24px; background: radial-gradient(120% 90% at 50% 0%, #fff0dd 0%, var(--b-apricot) 45%, var(--b-peach) 100%); }
+.bb-lap__dev { --bz: clamp(6px, 1.3vw, 13px); width: 100%; max-width: 980px; margin-inline: auto; filter: drop-shadow(0 34px 38px rgba(80, 30, 0, 0.22)); }
+.bb-lap__lid { position: relative; margin-inline: 6.5%; padding: var(--bz); border-radius: clamp(10px, 1.8vw, 20px) clamp(10px, 1.8vw, 20px) 4px 4px; background: linear-gradient(180deg, #34353b 0%, #17181b 100%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.28); }
+.bb-lap__cam { position: absolute; top: calc(var(--bz) / 2 - 2px); left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #050507; box-shadow: 0 0 0 1px #3d3e45; }
+.bb-lap__view { position: relative; border-radius: clamp(4px, 0.8vw, 8px); overflow: hidden; background: #fff; }
+.bb-lap__screen { aspect-ratio: 16 / 10; overflow-x: hidden; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 28, 0.32) transparent; -webkit-overflow-scrolling: touch; }
+.bb-lap__screen:focus-visible { outline: 2px solid var(--b-orange); outline-offset: -2px; }
+.bb-lap__screen::-webkit-scrollbar { width: 8px; }
+.bb-lap__screen::-webkit-scrollbar-thumb { background: rgba(0, 0, 28, 0.28); border-radius: 4px; border: 2px solid #fff; }
+.bb-lap__screen img { display: block; width: 100%; height: auto; }
+.bb-lap__glare { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(118deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 34%); }
+.bb-lap__chip { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 14px; border-radius: 999px; background: rgba(0, 0, 28, 0.82); color: #fff; font-size: 12px; line-height: 16px; letter-spacing: 0.04em; white-space: nowrap; pointer-events: none; transition: opacity 0.25s ease; }
+.bb-lap__chip i { width: 6px; height: 6px; border-right: 1.5px solid #fff; border-bottom: 1.5px solid #fff; transform: translateY(-1px) rotate(45deg); animation: bb-nudge 1.6s ease-in-out infinite; }
+@keyframes bb-nudge { 0%, 100% { transform: translateY(-2px) rotate(45deg); } 50% { transform: translateY(1px) rotate(45deg); } }
+@media (prefers-reduced-motion: reduce) { .bb-lap__chip i { animation: none; } }
+.bb-lap.is-scrolled .bb-lap__chip { opacity: 0; }
+.bb-lap__base { position: relative; height: clamp(9px, 1.5vw, 15px); border-radius: 0 0 clamp(10px, 1.8vw, 18px) clamp(10px, 1.8vw, 18px) / 0 0 clamp(8px, 1.3vw, 14px) clamp(8px, 1.3vw, 14px); background: linear-gradient(180deg, #e8e9ed 0%, #c4c6cc 62%, #9fa1a9 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85); }
+.bb-lap__base::before { content: ""; position: absolute; top: 0; left: 50%; width: min(17%, 150px); height: 52%; transform: translateX(-50%); border-radius: 0 0 10px 10px; background: linear-gradient(180deg, #a9abb2, #d3d5da); }
+.bb-lap__cap { display: block; margin-top: 14px; text-align: center; }
+.bb-out { margin-top: 28px; padding: 32px 36px 34px; border: 1px solid var(--b-orange); border-radius: 24px; background: var(--b-peach); }
+.bb-out b { display: block; font-size: 48px; line-height: 56px; font-weight: 500; letter-spacing: -0.5px; }
+.bb-out p { margin-top: 14px; font-size: 18px; line-height: 30px; }
+@media (max-width: 1023px) {
+  .bb-aida { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .bb-aida__l { display: none; }
+  .bb-aida__r { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .bb-aida__r > * { position: static; }
+  .bb-an__st { display: block; }
+}
+@media (max-width: 767px) {
+  .bb-aida__r { grid-template-columns: minmax(0, 1fr); }
+  .bb-t--fb tbody th { width: auto; font-size: 18px; font-weight: 600; }
+  .bb-t--fb td:last-child { padding-right: 0; }
+  .bb-lap__chip { bottom: 8px; padding: 4px 10px 4px 12px; font-size: 11px; }
+  .bb-lap__stage { border-radius: 16px; padding-inline: 8px; }
+  .bb-lap__lid { margin-inline: 3%; }
+  .bb-out { padding: 24px 22px 26px; }
+  .bb-hint.bb-lap__cap { display: block; }
+}
 /* section dots: ink on the orange hero, burnt orange on cream */
 #dotnav-bb { --kn: #d4531a; --kn-bg: var(--card); }
 #dotnav-bb.on-hero { --kn: #00001c; }
@@ -2325,7 +2381,9 @@ root.querySelectorAll('.sc-k,.sc-st').forEach(function(b){var f=b.dataset.f;
       <li><a href="#bb-brief"><span class="dotnav__dot"></span><span class="dotnav__label">Project Brief</span></a></li>
       <li><a href="#bb-audit"><span class="dotnav__dot"></span><span class="dotnav__label">Audit</span></a></li>
       <li><a href="#bb-market"><span class="dotnav__dot"></span><span class="dotnav__label">Market Study</span></a></li>
-      <li><a href="#bb-flow"><span class="dotnav__dot"></span><span class="dotnav__label">Form Flow</span></a></li>
+      <li><a href="#bb-design"><span class="dotnav__dot"></span><span class="dotnav__label">Redesign</span></a></li>
+      <li><a href="#bb-feedback"><span class="dotnav__dot"></span><span class="dotnav__label">Feedback</span></a></li>
+      <li><a href="#bb-final"><span class="dotnav__dot"></span><span class="dotnav__label">Final Design</span></a></li>
     </ul>
   </nav>
   <header class="bb-hero" id="bb-top">
@@ -2401,11 +2459,51 @@ root.querySelectorAll('.sc-k,.sc-st').forEach(function(b){var f=b.dataset.f;
       </div>
     </section>
 
-    <section class="bb-sec bb-sec--last" id="bb-flow" aria-labelledby="bb-flow-t">
+    <section class="bb-sec" id="bb-design" aria-labelledby="bb-design-t">
       <div class="bb-wrap">
-        <div><h3 class="bb-h3" id="bb-flow-t">Form Flow</h3>
-          <p class="bb-p" style="margin-top:28px">I compared 4 ways a referral could enter the system, scoring each on ease of use, engagement, lead quality, drop-off risk &amp; personal touch.</p></div>
-        <table class="bb-t"><thead><tr><th scope="col">Flow</th><th scope="col">How it works</th><th scope="col">Strength</th><th scope="col">Risk</th></tr></thead><tbody><tr><th scope="row">Referral link<br><span>(self-referral by email)</span></th><td data-l="How it works">The user enters their email, gets a link and shares it with friends.</td><td data-l="Strength">The easiest and most scalable. Clicks and conversions are tracked automatically.</td><td data-l="Risk">Low personal touch, spam risk and low intent from people who get a generic link.</td></tr><tr><th scope="row">Friend-specific email</th><td data-l="How it works">The user enters their email and a friend&rsquo;s email. The friend gets a personalised invite.</td><td data-l="Strength">More trustworthy for the friend, and the company collects emails for later.</td><td data-l="Risk">More effort, and some users hesitate to share friends&rsquo; details.</td></tr><tr><th scope="row">Multi-referral form: the friend calls</th><td data-l="How it works">The user fills in their details and their friends&rsquo;. The friends must call Brick &amp; Bolt.</td><td data-l="Strength">High-intent leads, since people who make the effort to call are likely to convert.</td><td data-l="Risk">High friction and a lengthy form, so more drop-off and lower scalability.</td></tr><tr><th scope="row">Multi-referral form: Brick &amp; Bolt calls<br><span>(the current flow)</span></th><td data-l="How it works">The user fills in their details and their friends&rsquo;. Brick &amp; Bolt contacts the friends.</td><td data-l="Strength">Rated highest on engagement, lead quality and personal touch. Sales can qualify leads on the call.</td><td data-l="Risk">Some friends may find unsolicited calls intrusive, and users may hesitate to share a friend&rsquo;s number.</td></tr></tbody></table>
+        <div><p class="bb-eyebrow">Design</p><h2 class="bb-h2" id="bb-design-t">The Redesign</h2></div>
+        <div>
+          <h3 class="bb-h3">AIDA (Iteration 01)</h3>
+          <p class="bb-p" style="margin-top:28px">The AIDA Model, which stands for <b>Attention, Interest, Desire, and Action</b> model, is an advertising effect model that identifies the stages that an individual goes through during the process of purchasing a product or service.</p>
+          <div class="bb-aida">
+            <div class="bb-aida__l" aria-hidden="true"><div class="bb-st" style="--y:0%"><i aria-hidden="true">A</i><span>Attraction</span></div><div class="bb-st" style="--y:15.5%"><i aria-hidden="true">I</i><span>Interest</span></div><div class="bb-st" style="--y:27.8%"><i aria-hidden="true">D</i><span>Desire</span></div><div class="bb-st" style="--y:47.9%"><i aria-hidden="true">A</i><span>Action</span></div></div>
+            <div class="bb-aida__mid"><img src="bb/bb-aida.jpg" alt="First redesign of the referral page, top to bottom: banner &ldquo;Earn upto &#8377;1,00,000 &amp; Help Someone Build with Us!&rdquo;, three easy steps, three champions, a co-founder&rsquo;s word, the referral form, an app download banner, FAQs and a closing call to action." width="1328" height="4096" loading="lazy" decoding="async"></div>
+            <div class="bb-aida__r"><article class="bb-ac bb-an" style="--y:0%"><span class="bb-an__st">Attraction</span><h4 class="bb-ac__t">Banner</h4><p class="bb-ac__p">The headline gives the reader two benefits at once: they help a friend and they earn. The photo shows people relaxed in each other&rsquo;s company, in a warm room with greenery outside, which suggests the stress-free experience the company promises. The button sits in the first glance of the page.</p></article><article class="bb-ac bb-an" style="--y:15.5%"><span class="bb-an__st">Interest</span><h4 class="bb-ac__t">Process</h4><p class="bb-ac__p">&ldquo;Refer a Friend in 3 Easy Steps&rdquo; makes referring sound easier than ever. The steps are Refer, Relax and Rewards, and the repeated R sounds make them easy to remember. &ldquo;Relax&rdquo; turns a long sales process into something pleasant: the team does the hard work.</p></article><article class="bb-ac bb-an" style="--y:27.8%"><span class="bb-an__st">Desire</span><h4 class="bb-ac__t">The champions</h4><p class="bb-ac__p">Earning this much can sound too good to be true. Showing real referral partners, ranked like a leaderboard, makes it believable, and gamifies the programme.</p></article><article class="bb-ac bb-an" style="--y:36.4%"><h4 class="bb-ac__t">Cofounder&rsquo;s word</h4><p class="bb-ac__p">When leaders explain the programme&rsquo;s purpose, people feel more comfortable referring. It is a gentle nudge before the big step of filling in the form. The design carries placeholder content here, to be replaced with the co-founder&rsquo;s own words.</p></article><article class="bb-ac bb-an" style="--y:47.9%"><span class="bb-an__st">Action</span><h4 class="bb-ac__t">The form</h4><p class="bb-ac__p">A clean layout lowers the effort of filling it in. It has two parts, &ldquo;Add Reference Details&rdquo; (name, plot location, mobile number) and &ldquo;Add Your Details&rdquo; (name, mobile number). The image beside it adds visual appeal and catches someone scrolling quickly.</p></article><article class="bb-ac bb-an" style="--y:67.2%"><h4 class="bb-ac__t">Download the app</h4><p class="bb-ac__p">A banner right below the form lets the referrer track their referrals in the Brick &amp; Bolt app, which keeps the journey going after they submit.</p></article><article class="bb-ac bb-an" style="--y:78.5%"><h4 class="bb-ac__t">FAQ</h4><p class="bb-ac__p">Five chosen questions cover eligibility, referral limits, payout timing, commission and tracking. They replace the separate policy page.</p></article><article class="bb-ac bb-an" style="--y:91.2%"><h4 class="bb-ac__t">Footer call to action</h4><p class="bb-ac__p">&ldquo;Let&rsquo;s Partner Up! Commission is waiting. Refer, build, and cash in.&rdquo; It gives last-minute encouragement and sends the reader back to the form.</p></article></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bb-sec" id="bb-feedback" aria-labelledby="bb-feedback-t">
+      <div class="bb-wrap">
+        <h3 class="bb-h3" id="bb-feedback-t">Feedback</h3>
+        <table class="bb-t bb-t--fb"><thead><tr><th scope="col">Feedback</th><th scope="col">What I did</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">Include Brick &amp; Bolt&rsquo;s value propositions in the banner copy</th><td data-l="What I did">The banner now carries a supporting body text on safe and secure money transactions, transparency at every step, assured quality control and zero delays.</td><td data-l="Status"><span class="bb-pill bb-pill--keep bb-pill--st">Resolved</span></td></tr><tr><th scope="row">Mention the referral scheme: &ldquo;How much money will I earn?&rdquo;</th><td data-l="What I did">Added a &ldquo;More Referrals, More Money!&rdquo; section with three reward tiers (0.5%, 0.75% and 1% of project value) and a note that rewards are estimates.</td><td data-l="Status"><span class="bb-pill bb-pill--keep bb-pill--st">Resolved</span></td></tr><tr><th scope="row">Header copy: personal or commercial?</th><td data-l="What I did">Personal. Per the data, 90% of referrals are residential.</td><td data-l="Status"><span class="bb-pill bb-pill--keep bb-pill--st">Resolved</span></td></tr><tr><th scope="row">&ldquo;Add more&rdquo; button in the form: keep or remove?</th><td data-l="What I did">Removed, based on previous records.</td><td data-l="Status"><span class="bb-pill bb-pill--keep bb-pill--st">Resolved</span></td></tr><tr><th scope="row">Use an iOS mockup in the &ldquo;Download the app&rdquo; banner</th><td data-l="What I did">Updated.</td><td data-l="Status"><span class="bb-pill bb-pill--keep bb-pill--st">Resolved</span></td></tr><tr><th scope="row">Banner image with interiors</th><td data-l="What I did">Updated. The hero now shows friends relaxing in a living room.</td><td data-l="Status"><span class="bb-pill bb-pill--keep bb-pill--st">Resolved</span></td></tr></tbody></table>
+      </div>
+    </section>
+
+    <section class="bb-sec bb-sec--last" id="bb-final" aria-labelledby="bb-final-t">
+      <div class="bb-wrap">
+        <div><p class="bb-eyebrow">Result</p><h2 class="bb-h2" id="bb-final-t">Final Design</h2></div>
+        <figure class="bb-lap">
+          <div class="bb-lap__stage">
+            <div class="bb-lap__dev">
+              <div class="bb-lap__lid">
+                <span class="bb-lap__cam" aria-hidden="true"></span>
+                <div class="bb-lap__view">
+                  <div class="bb-lap__screen" tabindex="0" role="region" aria-label="Final design of the referral page. Scroll to see the whole page."><img src="bb/bb-final.jpg" alt="Final design of the referral page: a banner reading &ldquo;Help a Friend build their Dream Home &amp; Earn upto &#8377;1,00,000&rdquo;, the three easy steps, reward tiers, champions, the referral form, an app download banner, FAQs and a closing call to action." width="1356" height="4096" loading="lazy" decoding="async"></div>
+                  <span class="bb-lap__glare" aria-hidden="true"></span>
+                  <span class="bb-lap__chip" aria-hidden="true">Scroll to explore <i></i></span>
+                </div>
+              </div>
+              <div class="bb-lap__base" aria-hidden="true"></div>
+            </div>
+          </div>
+          <figcaption class="bb-hint bb-lap__cap">Scroll inside the screen to browse the whole page.</figcaption>
+        </figure>
+        <div>
+          <h3 class="bb-h3">What the page was built to move?</h3>
+          <div class="bb-out"><b>$1.52M</b><p>Annual GMV generated by the programme, with rewards of up to $1,000.</p></div>
+        </div>
       </div>
     </section>
   </main>
@@ -3485,6 +3583,16 @@ root.querySelectorAll('.sc-k,.sc-st').forEach(function(b){var f=b.dataset.f;
     window.addEventListener("scroll", request, { passive: true });
     window.addEventListener("resize", request);
     update();
+  })();
+</script>
+
+<script>
+  /* Brick & Bolt laptop mockup: hide the scroll hint once the screen has been scrolled */
+  (function () {
+    var scr = document.querySelector(".bb-lap__screen");
+    if (!scr) return;
+    var fig = scr.closest(".bb-lap");
+    scr.addEventListener("scroll", function () { fig.classList.toggle("is-scrolled", scr.scrollTop > 24); }, { passive: true });
   })();
 </script>
 
