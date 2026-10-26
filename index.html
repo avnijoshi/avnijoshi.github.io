@@ -374,11 +374,11 @@
   .site-logo {
     position: absolute;
     z-index: 2;
-    top: calc(24px + env(safe-area-inset-top, 0px));
+    top: calc(44px + env(safe-area-inset-top, 0px));
     left: max(var(--gutter), calc((100% - var(--content-max)) / 2), env(safe-area-inset-left, 0px));
     display: block;
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     color: var(--text);
     transition: opacity 0.2s ease;
   }
@@ -387,7 +387,9 @@
   .site-logo:hover { opacity: 0.7; }
   .site-logo:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; border-radius: 4px; }
   .hero { position: relative; }
-  @media (max-width: 767px) { .site-logo { width: 38px; height: 38px; top: calc(20px + env(safe-area-inset-top, 0px)); } }
+  @media (max-width: 767px) { .site-logo { width: 30px; height: 30px; top: calc(32px + env(safe-area-inset-top, 0px)); } }
+  /* "What I bring" is plain text with no card edges, so it needs a little more air before Featured Projects */
+  #about { padding-bottom: calc(var(--section-gap) * 0.3); }
 
   /* ---------- Project card thumbnails ---------- */
   .card__cover--shots { display: flex; justify-content: center; align-items: flex-start; gap: 4%; padding-top: 26px; }
@@ -2095,7 +2097,7 @@
         <div class="card__cover" style="background:#fff"><img src="medium/sdm.webp" alt="Group photo from SDM Symposium 2.0 at NID" loading="lazy"></div>
         <div class="card__body">
           <h3 class="card__title"><a class="card__link" href="https://medium.com/@ghughutibasuti/sdm-symposium-2-0-key-takeaways-9f9edafac6ac" target="_blank" rel="noopener noreferrer">SDM Symposium 2.0 Key Takeaways</a></h3>
-          <p class="body">Hosting NID’s SDM Symposium 2.0, plus takeaways from the MSME panel I spoke on.</p>
+          <p class="body">A recap of NID’s SDM Symposium 2.0: panels bridging academia and industry around Viksit Bharat 2047.</p>
         </div>
       </article>
 
