@@ -2073,16 +2073,17 @@
 .site-foot__note { margin: 0; font-family: "Gaegu", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive; font-size: 26px; line-height: 32px; letter-spacing: 0.03em; color: #3f5ba9; }
 .site-foot__mail { margin-top: 8px; font-size: 20px; line-height: 30px; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; text-decoration-color: var(--line); transition: text-decoration-color 0.2s ease; overflow-wrap: anywhere; }
 .site-foot__mail:hover { text-decoration-color: currentColor; }
-.site-foot__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); margin-top: 72px; text-align: center; }
-.site-foot__col { display: flex; flex-direction: column; align-items: center; gap: 12px; min-width: 0; }
-.site-foot__col > .label { opacity: 0.7; }
-.site-foot__list { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.site-foot__base { display: flex; justify-content: space-between; gap: 16px; margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; line-height: 20px; }
+.site-foot__social { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px 20px; margin-top: 40px; }
+.site-foot__ico { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; color: var(--text, #333); transition: opacity 0.2s ease, transform 0.2s ease; }
+.site-foot__ico svg { width: 32px; height: 32px; display: block; }
+.site-foot__ico:hover { opacity: 0.65; transform: translateY(-2px); }
+.site-foot__ico:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .site-foot__ico { transition: none; } .site-foot__ico:hover { transform: none; } }
+.site-foot__base { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; line-height: 20px; }
 .site-foot__base p { margin: 0; }
 .site-foot__base .link:hover { text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 767px) {
   .site-foot__title { font-size: 28px; line-height: 36px; }
-  .site-foot__cols { grid-template-columns: minmax(0, 1fr); gap: 40px; margin-top: 56px; }
   .site-foot__base { flex-direction: column; align-items: center; text-align: center; margin-top: 48px; }
 }
 
@@ -4092,29 +4093,12 @@ render();
     <p class="site-foot__note">Yours could be next.</p>
     <a class="site-foot__mail link" href="mailto:avnijoshi007@gmail.com">avnijoshi007@gmail.com</a>
   </div>
-  <div class="site-foot__cols">
-    <div class="site-foot__col">
-      <p class="body body--bold">Avni Joshi</p>
-      <p class="label">Design | Research | Strategy</p>
-    </div>
-    <nav class="site-foot__col" aria-label="Explore">
-      <p class="label">Explore</p>
-      <ul class="site-foot__list">
-        <li><a class="body link" href="#aboutme">About me</a></li>
-        <li><a class="body link" href="#projects">Projects</a></li>
-        <li><a class="body link" href="#writing">Writing</a></li>
-      </ul>
-    </nav>
-    <nav class="site-foot__col" aria-label="Elsewhere">
-      <p class="label">Elsewhere</p>
-      <ul class="site-foot__list">
-        <li><a class="body link" href="https://www.linkedin.com/in/avnijoshi007/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a class="body link" href="https://www.behance.net/avnijoshi007" target="_blank" rel="noopener noreferrer">Behance</a></li>
-        <li><a class="body link" href="https://medium.com/@ghughutibasuti" target="_blank" rel="noopener noreferrer">Medium</a></li>
-        <li><a class="body link" href="https://www.instagram.com/ghughutibasuti/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-      </ul>
-    </nav>
-  </div>
+  <nav class="site-foot__social" aria-label="Elsewhere">
+    <a class="site-foot__ico" href="https://www.behance.net/avnijoshi007" target="_blank" rel="noopener noreferrer" aria-label="Behance" title="Behance"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><text x="12" y="16.2" text-anchor="middle" font-family="Aileron, -apple-system, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="var(--paper, #fffdf4)">B&#275;</text></svg></a>
+    <a class="site-foot__ico" href="https://www.instagram.com/ghughutibasuti/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></svg></a>
+    <a class="site-foot__ico" href="https://www.linkedin.com/in/avnijoshi007/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="4.4" r="2" fill="currentColor"/><rect x="3.2" y="8.6" width="3.6" height="11.4" fill="currentColor"/><path d="M9.8 8.6h3.4v1.6c.6-1.1 1.9-1.9 3.6-1.9 3 0 3.9 1.9 3.9 4.7V20h-3.6v-6.2c0-1.3-.3-2.3-1.6-2.3-1.4 0-2 1-2 2.4V20H9.8z" fill="currentColor"/></svg></a>
+    <a class="site-foot__ico" href="https://medium.com/@ghughutibasuti" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="6" fill="currentColor"/><ellipse cx="16.6" cy="12" rx="3" ry="6" fill="currentColor"/><ellipse cx="21.6" cy="12" rx="1.1" ry="5.2" fill="currentColor"/></svg></a>
+  </nav>
   <div class="site-foot__base">
     <p>&copy; 2026 Avni Joshi</p>
     <a class="link" href="#top" id="foot-top">Back to top</a>
